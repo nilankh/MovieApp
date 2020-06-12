@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+
 
 
 class Navbar extends React.Component {
@@ -18,4 +18,4 @@ class Navbar extends React.Component {
     }
   
 
-export default App;
+export default Navbar;
