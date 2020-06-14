@@ -23,7 +23,6 @@ import { act } from 'react-dom/test-utils';
 const logger = ({ dispatch, getState }) => (next) => (action) => {
     // Logger code
     if(typeof action != 'function'){
-
         console.log('ACTION_TYPE = ', action.type);
     }
     next(action);

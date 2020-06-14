@@ -22,6 +22,7 @@ class Navbar extends React.Component {
 
         this.props.dispatch(handleMovieSearch(searchText));
     };
+
     handleChange = (e) => {
         this.setState({
             searchText: e.target.value
@@ -29,6 +30,7 @@ class Navbar extends React.Component {
     };
     render (){
         const { showSearchResults } = this.state;
+        console.log("printing diptach",this.props.dispatch);
         return (
             <div className="nav">
              <div className="search-container">
