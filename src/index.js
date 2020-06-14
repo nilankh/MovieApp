@@ -8,14 +8,20 @@ import rootReducer from './reducers';
 
 // function logger(obk, next, action)
 // logger(obj)(next)(action)
-const logger = function({ dispatch, getState }) {
-    return function(next) {
-        return function(action) {
-            // Middleware code
-            console.log('ACTION_TYPE = ', action.type);
-            next(action);
-        }
-    }
+// const logger = function({ dispatch, getState }) {
+//     return function(next) {
+//         return function(action) {
+//             // Middleware code
+//             console.log('ACTION_TYPE = ', action.type);
+//             next(action);
+//         }
+//     }
+// }
+
+const logger = ({ dispatch, getState }) => (next) => (action) => {
+    // Logger code
+    console.log('ACTION_TYPE = ', action.type);
+    next(action);
 }
 
 const store = createStore(rootReducer, applyMiddleware(logger));
