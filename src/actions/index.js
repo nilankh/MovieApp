@@ -37,3 +37,18 @@ export function setShowFavourites(val) {
     val
   };
 }
+
+export function addMovieToList(movie) {
+  return {
+    type: ADD_MOVIE_TO_LIST,
+    movie
+  };
+}
+
+export function handleMovieSearch(movie) {
+  const url = `http://www.omdbapi.com?apikey=3ca5df7&t=${movie}`;
+
+  fetch(url)
+    .then(response => console.log(response));
+
+}
