@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 // import { data } from '../data';
 import { addMovieToList, handleMovieSearch } from '../actions';
+import { data } from '../data';
 import { StoreContext } from '..';
 
 
@@ -8,15 +9,14 @@ class Navbar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            
             searchText: ''
         };
     }
     handleAddToMovies = (movie) => {
         this.props.dispatch(addMovieToList(movie));
-        this.setState({
-            showSearchResults: false
-        });
+        // this.setState({
+        //     showSearchResults: false
+        // });
     }
     handleSearch = () => {
         const { searchText } = this.state;
@@ -31,7 +31,7 @@ class Navbar extends React.Component {
     };
     render (){
         
-        const { result:movie, showSearchResults } = this.props.search;
+        const { results:movie, showSearchResults } = this.props.search;
         console.log("printing diptach",this.props.dispatch);
         return (
             <div className="nav">
