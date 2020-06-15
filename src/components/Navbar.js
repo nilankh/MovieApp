@@ -34,6 +34,7 @@ class Navbar extends React.Component {
         console.log("printing diptach",this.props.dispatch);
         return (
             <div className="nav">
+                
              <div className="search-container">
                  <input onChange={this.handleChange}/>
                  <button id="search-btn" onClick={this.handleSearch}>Search</button>
